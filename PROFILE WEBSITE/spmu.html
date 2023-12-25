@@ -1,0 +1,715 @@
+<!DOCtype html>
+<html>
+    <head>
+        <title>S.P.M.U | TinkerrBelle</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Google CSS-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300&display=swap" rel="stylesheet">
+        <style>
+            body  {
+                background-image: url("spmu.jfif");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                min-width: 1000px;
+                
+            }
+
+            .content, .header {
+                font-family: 'Work Sans', sans-serif;
+                font-weight: 100; /* For the ExtraLight variant */
+            }
+
+            .flex-containerx {
+                display: flex;
+                background-color: rgb(237, 202, 208);
+                opacity: 0.9;
+                padding-top: 150px;
+                color: rgb(197, 39, 65);
+
+            }
+
+            .flex-containery {
+                display: flex;
+                background-color: rgb(197, 39, 65);
+                opacity: 0.9;
+                padding-top: 150px;
+                color: rgb(237, 202, 208);
+            }
+
+
+            .container {
+                width: 950px;
+                text-align: justify;
+            }
+
+            .center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 25px;
+                padding-bottom: 80px;
+            }
+
+            #git {
+                background-color: inherit;
+                border: 1px solid white;
+                padding: 5px 15px;
+                margin: 4px 2px;
+                font-size: 17px;
+                color: rgb(197, 39, 65);
+                border-radius: 5px;
+
+                
+            }
+
+            #git:hover {
+                border: 1px solid rgb(197, 39, 65);
+                color: rgb(248, 244, 244);
+                background-color: rgb(247, 160, 174);
+            }
+
+            #git-y {
+                background-color: rgb(247, 160, 174);
+                border: 1px solid white;
+                padding: 5px 15px;
+                margin: 4px 2px;
+                font-size: 17px;
+                color: rgb(197, 39, 65);
+                border-radius: 5px;
+
+                
+            }
+
+            #git-y:hover {
+                border: 1px solid rgb(197, 39, 65);
+                color: rgb(248, 244, 244);
+                background-color: rgb(247, 160, 174);
+            }
+
+
+            .navbar-custom .navbar-brand,
+            .navbar-custom .navbar-nav .nav-link {
+                font-size: 17px;
+                line-height: 41px;
+                color: rgb(248, 243, 243);
+            }
+
+            .navbar-custom .navbar-nav .nav-link:hover {
+                color: rgb(197, 39, 65);
+            }
+
+            .fixed-row {
+                position: fixed;
+                top: 300px;
+                left: 0;
+                width: 100%;
+                z-index: 999;
+                padding-left: 30px;
+                color: rgb(49, 47, 47);
+                font-size: 21px;
+                font-weight: 400;
+            }
+
+            .col-sm-6 a {
+                color: inherit;
+                text-decoration: none;
+                color: white;
+
+            }
+
+            .col-sm-6 a:hover {
+                color: rgb(248, 238, 238);
+                text-decoration: none;
+            }
+
+            
+
+            .head {
+                padding: 150px;
+                padding-top: 350px;
+                padding-bottom: 800px;
+                text-align: center;
+                color: white;
+            }
+
+            h1 {
+                font-size: 72px;
+                font-weight: 400;
+                line-height: 1em;
+
+            }
+
+            footer {
+                height: 60px;
+                background-color: rgb(197, 39, 65);
+                color: white;
+                font-size: 11px;
+                text-align: center;
+                padding: 15px;
+                padding-right: 120px;
+            }
+
+            .highlighted-text {
+                background-color: rgb(248, 244, 244);
+                padding: 2% 4% 2% 4%;
+            }
+
+            .card {
+                background-color: rgb(197, 39, 65);
+                color: rgb(248, 244, 244);
+                border-radius: 50px;
+                justify-content: left;
+            }
+
+            .card:hover {
+                opacity: 0.8;
+            }
+
+            .card-text {
+                font-size: 20px;
+                font-weight: bold;
+                text-align: center;
+                font-style: italic;
+                color: white;
+
+            }
+
+            .image-container {
+                overflow: hidden;
+                position: relative;
+                width: 300px;
+                border: 4px solid rgb(248, 244, 244);
+
+            }
+
+            .image-container img {
+                transition: transform 0.3s ease-in-out;
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            .text-overlay {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+                color: #fff; /* Set the color of the text */
+                text-align: center;
+                border: 5px solid white;
+                padding: 5% 5% 0 5%;
+                font-weight: bold;
+            }
+
+            .image-container:hover .text-overlay {
+                opacity: 1;
+            }
+
+            .image-container:hover img {
+                transform: scale(1.2); /* Adjust the scale factor as needed */
+            }
+            
+
+            .highlighted-text .row {
+                box-shadow: 5px 5px 10px rgb(197, 39, 65);            
+            }
+
+            .extra-content {
+                padding: 5%;    
+                background-color: rgb(248, 244, 244);
+                border-radius: 0 50px 0 50px;
+            }
+
+            .final-thought {
+                font-size: 20px;
+                font-style: italic;
+                padding: 10% 5% 0% 5%;
+            }
+
+            hr {
+                border: 0; /* Remove default border */
+                height: 1px; /* Set the height of the line */
+                background-color: rgb(197, 39, 65); /* Set the color of the line */
+                margin: 20px 0; /* Add some margin for spacing */
+            }
+
+            .flex-containery hr {
+                border: 0; /* Remove default border */
+                height: 1px; /* Set the height of the line */
+                background-color: rgb(237, 202, 208); /* Set the color of the line */
+                margin: 20px 0; /* Add some margin for spacing */
+
+            }
+            
+            #select {
+                opacity: 0.9;
+                width: 100%;
+            }
+
+            #button-x, #button-y {
+                width: 100%;
+                text-align: inherit;
+                background-color: inherit;
+                border: none;
+                color: inherit;
+            }
+
+            #button-x {
+                color: rgb(197, 39, 65);
+            }
+
+            #button-y {
+                color: rgb(237, 202, 208);
+            }
+
+            .photo {
+                border: 2px solid rgb(237, 202, 208);
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand navbar-expand-md navbar-custom bg-faded">
+            <div class="d-md-flex d-block w-100">
+                <div class="collapse navbar-collapse mx-auto w-auto justify-content-center" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="about.html">ABOUT <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="hair.html">HAIR</a>
+                        <a class="nav-item nav-link" href="makeup.html">MAKE-UP</a>
+                        <a class="nav-item nav-link active" href="#">S.P.M.U</a>
+                        <a class="nav-item nav-link" href="piercing.html">PIERCING</a>
+                        <a class="nav-item nav-link" href="tattoo.html">TATTOO</a>
+                        <a class="nav-item nav-link" href="mailto:someone@example.com">GET IN TOUCH</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header">
+            <div class="head">
+                <h1>SEMI-PERMANENT MAKE-UP</h1>
+                <h4>BE YOUR OWN BEAUTIFUL!</h4>
+            </div>
+
+        </div>
+
+
+
+
+
+        <!-- ROW SELECT BETWEEN MICRO-BLADING CONTAINER & LASHING CONTAINER-->
+
+        <div class="row" id="select" style="width: 100%;">
+            <div class="col-md-6" style="background-color: rgb(237, 202, 208);">
+                <h2 style="text-align: right;">
+                    <button id="button-x" onclick="viewConX()">MICRO-BLADING</button>
+                </h2>
+            </div>
+
+            <div class="col-md-6" style="background-color: rgb(197, 39, 65); width: 100%;">
+                <h2 style="text-align: left;">
+                    <button id="button-y" onclick="viewConY()">LASHING</button></h2>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- CONTAINER X - MICRO-BLADING -->
+
+        <div  id="container-x" class="flex-containerx">
+            <div class="container">
+                <h3>Unlock Effortless Beauty with Microblading: A Masterpiece for Your Brows</h3>
+                <p>Microblading is a cutting-edge technique that has revolutionized the world of eyebrow enhancement, providing individuals with a natural
+                     and long-lasting solution to sparse, thin, or uneven brows. Say farewell to the tedious daily ritual of penciling in your brows, and
+                     welcome the artistry of microblading.
+                </p>
+
+                <br/><br/>
+                <h3>What is Microblading?</h3>
+                <p>Microblading is a semi-permanent cosmetic tattooing method that uses a handheld tool with ultra-fine needles to create delicate, hair-like
+                     strokes in the eyebrow area. This meticulous process allows for the precise application of pigment, resulting in a realistic and 
+                     natural-looking enhancement.
+                </p>
+                <br/><br/><br/><hr>
+                <div>
+                    <h3>Key Features and Benefits:</h3>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <p><span style="font-weight: bold;">Natural Appearance: </span>Microblading creates incredibly fine, individual strokes that 
+                                replicate the appearance of real eyebrow hairs, delivering a natural and realistic look.
+                            </p>
+                            <p><span style="font-weight: bold;">Customization: </span>Tailor the shape, thickness, and arch of your brows to suit your 
+                                facial features and personal style. The process is highly customizable to achieve your desired look.
+                            </p>
+                            <p><span style="font-weight: bold;">Long-Lasting Results: </span>Enjoy beautiful, well-defined brows for an extended 
+                                period—typically, microblading results can last anywhere from one to three years, depending on various factors such as 
+                                skin type and aftercare.
+                            </p>
+                            <p><span style="font-weight: bold;">Time-Saving: </span>Eliminate the need for daily brow maintenance. Wake up with perfect 
+                                brows every morning, saving valuable time in your daily beauty routine.
+                            </p>
+
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="image-container">
+                                <img src="brow1.jpeg" style="width: 100%;">
+                                <div class="text-overlay">
+                                    <p>BEFORE</p>
+                                </div>
+                            </div>
+                            <br/><br/>
+                            <div class="image-container">
+                                <img src="brow2.jpeg" style="width: 100%;">
+                                <div class="text-overlay">
+                                    <p>DESIGN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><br/>
+                <hr><br/>
+
+                <div>
+                    <h3>The Microblading Process:</h3>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <p><span style="font-weight: bold;">Consultation: </span>Begin with a consultation to discuss your goals, preferences, and 
+                                expectations. Your microblading artist will assess your facial features and create a customized plan.
+                            </p>
+                            <p><span style="font-weight: bold;">Design: </span>The artist will carefully design the shape of your brows, considering your 
+                                natural arch, symmetry, and desired look.
+                            </p>
+                            <p><span style="font-weight: bold;">Pigment Application: </span>Using a specialized microblading tool, the artist will 
+                                delicately implant pigment into the superficial layers of the skin, creating precise, hair-like strokes.
+                            </p>
+                            <p><span style="font-weight: bold;">Healing and Aftercare: </span>Follow specific aftercare instructions to ensure proper 
+                                healing and color retention. While some redness and mild swelling are normal initially, the final result will reveal 
+                                beautifully enhanced brows.
+                            </p>
+
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="image-container">
+                                <img src="brow3.jpeg" style="width: 100%;">
+                                <div class="text-overlay">
+                                    <p>PIGMENT APPLICATION</p>
+                                </div>
+                            </div>
+                            <br/><br/>
+                            <div class="image-container">
+                                <img src="brow4.jpeg" style="width: 100%;">
+                                <div class="text-overlay">
+                                    <p>AFTER</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                <br/><hr><br/>
+
+                <div class="extra-content">
+                    <h3 style="font-style: italic; text-align: center;">Is Microblading Right for You?</h3>
+
+                    <p style="text-align: center;">Microblading is an excellent option for individuals:</p>    
+                                        <div class="row">
+
+                        <div class="col-md-4 mb-4">
+                            <!-- Content for the first column -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text">With thin or sparse eyebrows.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <!-- Content for the first column -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text">Who want to define and reshape their brows.</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4 mb-4">
+                            <!-- Content for the first column -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text">Seeking a low-maintenance solution for perfectly groomed brows.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="final-thought">
+                    <p>Experience the confidence and convenience of flawlessly shaped brows with microblading. Consult with a skilled and certified
+                         microblading artist to embark on a personalized journey to eyebrow perfection, where artistry meets individual beauty. 
+                         Discover the magic of waking up to effortlessly beautiful brows every day.
+                    </p>    
+                </div>
+    
+
+                <div class="center">
+                    <button id="git" >BOOK A CONSULTATION!</button>
+                </div>
+            </div>
+
+            
+            
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <!-- CONTAINER Y - LASHING -->
+
+        <div  id="container-y" class="flex-containery">
+            <div class="container">
+                <h3>Enhance Your Beauty with Lash Extensions - A Semi-Permanent Solution</h3>
+                <p>Lash extensions have become a popular beauty trend, offering a semi-permanent solution for longer, fuller lashes without the need for mascara. 
+                    If you're tired of dealing with clumpy mascara or spending hours on your eye makeup, lash extensions might be the perfect solution for you.
+                </p>
+
+                <br/><br/><br/><hr>
+                <div style="text-align: center;">
+                    <h3>Benefits of Lash Extensions</h3><br/>
+                    <div>
+                        <p><span style="font-weight: bold;">Time-Saving Beauty Routine: </span><br/>Wake up with gorgeous lashes every morning, eliminating 
+                            the need for mascara.
+                        </p>
+                        <p><span style="font-weight: bold;">Customizable Looks: </span><br/>Choose the length, curl, and thickness that suits your style and 
+                            enhances your natural beauty.
+                        </p>
+                        <p><span style="font-weight: bold;">Long-Lasting Results: </span><br/>With proper care, lash extensions can last for several weeks, 
+                            maintaining their stunning appearance.
+                        </p>
+
+                    </div>
+                </div><br/>
+
+
+                <div class="photo">
+                    <img src="lashes.jpg" style="width: 100%;" alt="Lashes"/>
+                </div>
+                <hr><br/>
+
+                <div style="text-align: center;">
+                    <h3>The Lashing Process</h3><br/>
+                    <div>
+                        <p><span style="font-weight: bold;">Consultation: </span><br/>Discuss your desired look and any concerns with a certified lash technician.</p>
+                        <p><span style="font-weight: bold;">Selection: </span><br/>Choose from a variety of lash styles, from a natural enhancement to a 
+                            more dramatic, glamorous look.
+                        </p>
+                        <p><span style="font-weight: bold;">Application: </span><br/>Lash extensions are carefully applied to each natural lash using a 
+                            safe and gentle adhesive, ensuring a comfortable and seamless result.
+                        </p>
+                        <p><span style="font-weight: bold;">Aftercare: </span><br/>Receive personalized aftercare instructions to prolong the life of your 
+                            lash extensions and maintain their beauty.
+                        </p>
+                    </div>
+                </div>
+                                <br/><hr><br/>
+
+                <div class="extra-content">
+                    <h3 style="font-style: italic; text-align: center; color: rgb(197, 39, 65);">How do you maintain your lash extensions?</h3>
+
+                    <p style="text-align: center; color: rgb(197, 39, 65);">Properly maintain your lash extensions by:</p>    
+                                        <div class="row">
+
+                        <div class="col-md-4 mb-4">
+                            <!-- Content for the first column -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text">Gentle Cleansing.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <!-- Content for the first column -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text">Avoid Oil-Based Products.</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4 mb-4">
+                            <!-- Content for the first column -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text">Regular Fills.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="final-thought">
+                    <p>Lash extensions offer a low-maintenance way to enhance your natural beauty, providing you with stunning lashes that last for weeks. 
+                        Say goodbye to the hassle of mascara and hello to effortlessly beautiful eyes with lash extensions. If you were referring to a 
+                        different type of lashing or semi-permanent makeup, please provide more details so I can offer more tailored content.                        
+                    </p>    
+                </div>
+    
+
+                <div class="center">
+                    <button id="git-y" >BOOK A CONSULTATION!</button>
+                </div>
+            </div>
+
+            
+            
+        </div>
+
+
+        <!-- ROW SELECT BETWEEN MICRO-BLADING CONTAINER & LASHING CONTAINER-->
+
+        <div class="row" id="select" style="width: 100%;">
+            <div class="col-md-6" style="background-color: rgb(237, 202, 208);">
+                <h2 style="text-align: right;">
+                    <button id="button-x" onclick="viewConX()">MICRO-BLADING</button>
+                </h2>
+            </div>
+
+            <div class="col-md-6" style="background-color: rgb(197, 39, 65); width: 100%;">
+                <h2 style="text-align: left;">
+                    <button id="button-y" onclick="viewConY()">LASHING</button></h2>
+            </div>
+        </div>
+       
+        
+
+
+        
+        
+        <footer>
+            <div class="footer">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM199.4 312.6c-31.2-31.2-31.2-81.9 0-113.1s81.9-31.2 113.1 0c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9c-50-50-131-50-181 0s-50 131 0 181s131 50 181 0c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0c-31.2 31.2-81.9 31.2-113.1 0z"/></svg>
+                        2020 all rights reserved.
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="content">
+            <div class="row fixed-row">
+                <div class="col-sm-6">
+                    <a href="makeup.html" role="button" >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"  class="bi bi-chevron-left" viewBox="0 0 16 16">
+                            <path fill="currentColor" fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                        </svg>
+                        <span>&nbsp;MAKE-UP</span>
+                    </a>
+                </div>
+
+                <div class="col-sm-6" style="text-align: right;">
+                    <a href="piercing.html" role="button" >
+                        <span>PIERCING&nbsp;</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"  class="bi bi-chevron-right" viewBox="0 0 16 16">
+                            <path fill="currentColor" fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>                
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        
+
+        
+
+
+    </body>
+
+    <script>
+
+
+
+        // VIEW CONTAINER X - MICRO-BLADING
+        function viewConX() {
+            // view/hide the containers            
+            var containerX = document.getElementById('container-x');
+            var containerY = document.getElementById('container-y');
+
+            containerY.style.display = 'none';
+            containerX.style.display = 'block';
+            
+        }
+
+
+
+        // VIEW CONTAINER Y - LASHING
+        function viewConY() {
+            // view/hide the containers
+            var containerX = document.getElementById('container-x');
+            var containerY = document.getElementById('container-y');
+
+            containerX.style.display = 'none';
+            containerY.style.display = 'block';
+        }
+
+
+
+        // HIDE CONTAINER Y - LASHING ONLOAD WINDOW
+        document.addEventListener('DOMContentLoaded', function () {
+            var containerY = document.getElementById('container-y');
+            containerY.style.display = 'none';
+        });
+      </script>
+</html>
